@@ -1,300 +1,391 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rubio Service</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-    box-sizing: border-box;
-}
+    <title>Rubio Service</title>
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #080000;
-    overflow: hidden;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-body::before {
-    content: "";
-    position: fixed;
-    width: 500px;
-    height: 500px;
-    background: red;
-    border-radius: 50%;
-    filter: blur(160px);
-    opacity: .18;
-    top: -250px;
-    left: -200px;
-    animation: move 7s infinite alternate;
-}
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            background: #080000;
 
-@keyframes move {
-    to {
-        transform: translate(500px, 500px);
-    }
-}
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-.box {
-    width: 90%;
-    max-width: 600px;
-    padding: 35px;
-    background: rgba(20,0,0,.92);
-    border: 1px solid #700000;
-    border-radius: 20px;
-    box-shadow: 0 0 40px rgba(255,0,0,.25);
-    position: relative;
-}
+            overflow: hidden;
+        }
 
-h1 {
-    text-align: center;
-    font-size: 38px;
-    margin-bottom: 5px;
-}
+        body::before {
+            content: "";
+            position: fixed;
 
-h1 span {
-    color: red;
-}
+            width: 500px;
+            height: 500px;
 
-.subtitle {
-    text-align: center;
-    color: #888;
-    margin-bottom: 30px;
-}
+            background: red;
+            border-radius: 50%;
+            filter: blur(160px);
+            opacity: 0.18;
 
-.requirement {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    margin: 12px 0;
-    background: #160000;
-    border: 1px solid #400000;
-    border-radius: 12px;
-}
+            top: -250px;
+            left: -200px;
 
-.requirement:hover {
-    border-color: red;
-}
+            animation: movimiento 7s infinite alternate;
+        }
 
-.requirement strong {
-    display: block;
-}
+        @keyframes movimiento {
+            to {
+                transform: translate(500px, 500px);
+            }
+        }
 
-.requirement small {
-    color: #777;
-}
+        .box {
+            width: 90%;
+            max-width: 600px;
 
-.btn {
-    background: #d00000;
-    color: white;
-    text-decoration: none;
-    border: 0;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-}
+            padding: 35px;
 
-.btn:hover {
-    background: red;
-    box-shadow: 0 0 15px red;
-}
+            background: rgba(20, 0, 0, 0.94);
 
-.complete {
-    width: 100%;
-    margin-top: 20px;
-    padding: 16px;
-    background: linear-gradient(90deg,#900000,#ff0000,#900000);
-    background-size: 200%;
-    color: white;
-    border: 0;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    animation: shine 3s infinite linear;
-}
+            border: 1px solid #700000;
+            border-radius: 20px;
 
-@keyframes shine {
-    to {
-        background-position: 200%;
-    }
-}
+            box-shadow: 0 0 40px rgba(255, 0, 0, 0.25);
 
-#mensaje {
-    text-align: center;
-    color: #888;
-    margin-top: 10px;
-    font-size: 13px;
-}
-</style>
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 38px;
+            margin: 0 0 8px;
+        }
+
+        h1 span {
+            color: red;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .requirement {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 15px;
+            margin: 12px 0;
+
+            background: #160000;
+
+            border: 1px solid #400000;
+            border-radius: 12px;
+
+            transition: 0.2s;
+        }
+
+        .requirement:hover {
+            border-color: red;
+            box-shadow: 0 0 12px rgba(255, 0, 0, 0.2);
+        }
+
+        .requirement strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .requirement small {
+            color: #777;
+        }
+
+        .btn {
+            display: inline-block;
+
+            background: #d00000;
+            color: white;
+
+            text-decoration: none;
+
+            border: 0;
+            padding: 10px 16px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: red;
+            box-shadow: 0 0 15px red;
+        }
+
+        .btn.pulsado {
+            background: #333;
+            box-shadow: none;
+        }
+
+        .complete {
+            width: 100%;
+
+            margin-top: 20px;
+            padding: 16px;
+
+            background: #300000;
+            color: #777;
+
+            border: 0;
+            border-radius: 10px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: not-allowed;
+        }
+
+        .complete:not(:disabled) {
+            background: linear-gradient(
+                90deg,
+                #900000,
+                #ff0000,
+                #900000
+            );
+
+            background-size: 200%;
+
+            color: white;
+
+            cursor: pointer;
+
+            animation: brillo 3s infinite linear;
+        }
+
+        @keyframes brillo {
+            to {
+                background-position: 200%;
+            }
+        }
+
+        #mensaje {
+            text-align: center;
+            color: #888;
+
+            margin-top: 12px;
+
+            font-size: 13px;
+        }
+
+        @media (max-width: 500px) {
+            .box {
+                padding: 22px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .requirement {
+                gap: 10px;
+            }
+
+            .btn {
+                padding: 9px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="box">
+    <div class="box">
 
-    <h1>RUBIO <span>SERVICE</span></h1>
+        <h1>
+            RUBIO <span>SERVICE</span>
+        </h1>
 
-    <div class="subtitle">
-        Completa los requisitos para continuar
-    </div>
-
-    <div class="requirement">
-        <div>
-            <strong>𝕏 Seguir en X</strong>
-            <small>Cuenta principal</small>
+        <div class="subtitle">
+            Completa los requisitos para continuar
         </div>
 
-        <a class="btn requisito"
-   href="https://x.com/errubiofn"
-   target="_blank">
-    SEGUIR
-</a>
-    </div>
 
-    <div class="requirement">
-        <div>
-            <strong>𝕏 Segunda cuenta de X</strong>
-            <small>Cuenta secundaria</small>
+        <!-- X PRINCIPAL -->
+
+        <div class="requirement">
+
+            <div>
+                <strong>𝕏 Seguir en X</strong>
+                <small>Cuenta principal</small>
+            </div>
+
+            <a
+                class="btn requisito"
+                href="https://x.com/errubiofn"
+                target="_blank"
+                rel="noopener"
+            >
+                SEGUIR
+            </a>
+
         </div>
 
-        <a class="btn requisito"
-           href="https://x.com/ruxedit"
-           target="_blank">
-            SEGUIR
-        </a>
-    </div>
 
-    <div class="requirement">
-        <div>
-            <strong>▶ YouTube</strong>
-            <small>Suscríbete al canal</small>
+        <!-- SEGUNDA CUENTA X -->
+
+        <div class="requirement">
+
+            <div>
+                <strong>𝕏 Segunda cuenta de X</strong>
+                <small>Cuenta secundaria</small>
+            </div>
+
+            <a
+                class="btn requisito"
+                href="https://x.com/ruxedit"
+                target="_blank"
+                rel="noopener"
+            >
+                SEGUIR
+            </a>
+
         </div>
 
-        <a class="btn requisito"
-           href="https://www.youtube.com/@errubiofn"
-           target="_blank">
-            SUSCRIBIRSE
-        </a>
-    </div>
 
-    <div class="requirement">
-        <div>
-            <strong>💬 Discord</strong>
-            <small>Entra al servidor</small>
+        <!-- YOUTUBE -->
+
+        <div class="requirement">
+
+            <div>
+                <strong>▶ YouTube</strong>
+                <small>Suscríbete al canal</small>
+            </div>
+
+            <a
+                class="btn requisito"
+                href="https://www.youtube.com/@errubiofn"
+                target="_blank"
+                rel="noopener"
+            >
+                SUSCRIBIRSE
+            </a>
+
         </div>
 
-        <a class="btn requisito"
-           href="https://discord.gg/ux57RSJXp"
-           target="_blank">
-            ENTRAR
-        </a>
+
+        <!-- DISCORD -->
+
+        <div class="requirement">
+
+            <div>
+                <strong>💬 Discord</strong>
+                <small>Entra al servidor</small>
+            </div>
+
+            <a
+                class="btn requisito"
+                href="https://discord.gg/ux57RSJXp"
+                target="_blank"
+                rel="noopener"
+            >
+                ENTRAR
+            </a>
+
+        </div>
+
+
+        <!-- BOTÓN FINAL -->
+
+        <button
+            class="complete"
+            id="completeBtn"
+            disabled
+        >
+            🔒 COMPLETA LOS REQUISITOS
+        </button>
+
+
+        <div id="mensaje">
+            Pulsa los cuatro enlaces para desbloquear.
+        </div>
+
     </div>
 
-    <button class="complete" id="completeBtn" onclick="continuar()" disabled>
-    🔒 COMPLETA LOS REQUISITOS
-</button>
 
-    <div id="mensaje">
-        Completa los pasos y pulsa el botón.
-    </div>
+    <script>
 
-</div>
+        const enlaces =
+            document.querySelectorAll(".requisito");
 
-<script>
+        const boton =
+            document.getElementById("completeBtn");
 
-const enlaces = document.querySelectorAll(".requisito");
-const boton = document.getElementById("completeBtn");
+        const mensaje =
+            document.getElementById("mensaje");
 
-let pulsados = 0;
+        let pulsados = 0;
 
-enlaces.forEach(function(enlace) {
 
-    enlace.addEventListener("click", function() {
+        enlaces.forEach(function(enlace) {
 
-        if (!enlace.dataset.pulsado) {
-            enlace.dataset.pulsado = "true";
-            pulsados++;
-        }
+            enlace.addEventListener("click", function() {
 
-        if (pulsados === enlaces.length) {
-            boton.disabled = false;
-            boton.innerText = "✓ OBTENER OPTIMIZACIÓN";
-        }
+                if (!enlace.dataset.pulsado) {
 
-    });
+                    enlace.dataset.pulsado = "true";
 
-});
+                    enlace.classList.add("pulsado");
 
-<script>
+                    pulsados++;
 
-const enlaces = document.querySelectorAll(".requisito");
-const boton = document.getElementById("completeBtn");
+                    enlace.innerText = "✓ HECHO";
 
-let pulsados = 0;
+                }
 
-enlaces.forEach(function(enlace) {
 
-    enlace.addEventListener("click", function() {
+                if (pulsados === enlaces.length) {
 
-        if (!enlace.dataset.pulsado) {
-            enlace.dataset.pulsado = "true";
-            pulsados++;
-        }
+                    boton.disabled = false;
 
-        if (pulsados === enlaces.length) {
-            boton.disabled = false;
-            boton.innerText = "✓ OBTENER OPTIMIZACIÓN";
-        }
+                    boton.innerText =
+                        "✓ OBTENER OPTIMIZACIÓN";
 
-    });
+                    mensaje.innerText =
+                        "✓ Requisitos completados. Ya puedes continuar.";
 
-});
-<script>
+                }
 
-const enlaces = document.querySelectorAll(".requisito");
-const boton = document.getElementById("completeBtn");
+            });
 
-let pulsados = 0;
+        });
 
-enlaces.forEach(function(enlace) {
 
-    enlace.addEventListener("click", function() {
+        boton.addEventListener("click", function() {
 
-        if (!enlace.dataset.pulsado) {
-            enlace.dataset.pulsado = "true";
-            pulsados++;
-        }
+            if (boton.disabled) {
+                return;
+            }
 
-        if (pulsados === enlaces.length) {
-            boton.disabled = false;
-            boton.innerText = "✓ OBTENER OPTIMIZACIÓN";
-        }
+            window.location.href =
+                "consentimiento.html";
 
-    });
+        });
 
-});
-
-function continuar() {
-
-    document.getElementById("mensaje").innerText =
-        "✓ Requisitos completados. Continuando...";
-
-    setTimeout(function() {
-        window.location.href = "consentimiento.html";
-    }, 800);
-}
-
-</script>
+    </script>
 
 </body>
 </html>
