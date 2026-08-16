@@ -1,0 +1,125 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubio Service - Optimización</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            background: #080000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box {
+            width: 90%;
+            max-width: 600px;
+            padding: 40px;
+            text-align: center;
+            background: rgba(20, 0, 0, .95);
+            border: 1px solid #700000;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(255, 0, 0, .25);
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        h1 span {
+            color: red;
+        }
+
+        p {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        .warning {
+            margin: 25px 0;
+            padding: 16px;
+            background: #180000;
+            border: 1px solid #550000;
+            border-radius: 10px;
+            color: #ddd;
+        }
+
+        .download {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 16px 28px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #900000, #ff0000);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 0 20px rgba(255, 0, 0, .25);
+        }
+
+        .download:hover {
+            box-shadow: 0 0 30px rgba(255, 0, 0, .55);
+            transform: scale(1.03);
+        }
+
+        .file {
+            margin-top: 20px;
+            color: #777;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>
+        RUBIO <span>SERVICE</span>
+    </h1>
+
+    <p>
+        Tu optimización está lista.
+    </p>
+
+    <div class="warning">
+        ⚠️ Descarga el archivo y ejecútalo manualmente.
+        Si necesita permisos de administrador, Windows te mostrará
+        su propia solicitud de permisos.
+    </div>
+
+    <!--
+        AQUÍ CAMBIAS EL NOMBRE DEL ARCHIVO
+
+        Sustituye "RubioService.bat" por el nombre EXACTO
+        de tu archivo .bat.
+    -->
+
+    <a
+        class="download"
+        href="RubioService.bat"
+        download
+    >
+        ⬇️ DESCARGAR OPTIMIZACIÓN
+    </a>
+
+    <div class="file">
+        Archivo: RubioService.bat
+    </div>
+
+</div>
+
+</body>
+</html>
+```
