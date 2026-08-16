@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubio Service</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at 50% 20%, #5c0000 0%, #180000 35%, #050505 75%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Fondo animado */
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: .25;
+            animation: float 7s infinite alternate ease-in-out;
+            pointer-events: none;
+        }
+
+        body::before {
+            background: red;
+            top: -200px;
+            left: -150px;
+        }
+
+        body::after {
+            background: #ff2222;
+            bottom: -250px;
+            right: -150px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            from {
+                transform: translate(0, 0) scale(1);
+            }
+            to {
+                transform: translate(80px, 50px) scale(1.2);
+            }
+        }
+
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 650px;
+            padding: 45px;
+            text-align: center;
+            border: 1px solid rgba(255, 0, 0, .5);
+            border-radius: 25px;
+            background: rgba(15, 0, 0, .82);
+            box-shadow:
+                0 0 30px rgba(255, 0, 0, .25),
+                inset 0 0 30px rgba(255, 0, 0, .05);
+            backdrop-filter: blur(15px);
+            animation: appear .8s ease;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .logo {
+            font-size: 52px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: white;
+            text-shadow:
+                0 0 10px red,
+                0 0 25px red;
+        }
+
+        .logo span {
+            color: #ff1a1a;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        .line {
+            width: 100px;
+            height: 3px;
+            background: #ff1111;
+            margin: 25px auto;
+            box-shadow: 0 0 15px red;
+            border-radius: 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            color: #c8c8c8;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .feature {
+            padding: 15px 8px;
+            background: rgba(255, 0, 0, .07);
+            border: 1px solid rgba(255, 0, 0, .2);
+            border-radius: 12px;
+            font-size: 13px;
+            color: #ddd;
+        }
+
+        .feature strong {
+            display: block;
+            color: #ff3333;
+            margin-bottom: 5px;
+        }
+
+        .warning {
+            background: rgba(255, 0, 0, .08);
+            border: 1px solid rgba(255, 0, 0, .3);
+            border-radius: 12px;
+            padding: 14px;
+            font-size: 12px;
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #b00000, #ff1717, #b00000);
+            background-size: 200% 100%;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(255, 0, 0, .4);
+            transition: .25s;
+            animation: gradient 3s infinite linear;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0%;
+            }
+            100% {
+                background-position: 200%;
+            }
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 35px rgba(255, 0, 0, .7);
+        }
+
+        .button:active {
+            transform: scale(.98);
+        }
+
+        .footer {
+            margin-top: 25px;
+            color: #666;
+            font-size: 11px;
+        }
+
+        @media (max-width: 550px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            .logo {
+                font-size: 38px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="logo">
+            RUBIO <span>SERVICE</span>
+        </div>
+
+        <div class="subtitle">
+            Performance • Optimization • Service
+        </div>
+
+        <div class="line"></div>
+
+        <h2>Optimización personalizada</h2>
+
+        <p class="description">
+            Configura tu PC con nuestra herramienta de optimización.
+            Pulsa el botón para comenzar el proceso.
+        </p>
+
+        <div class="features">
+
+            <div class="feature">
+                <strong>⚡ PERFORMANCE</strong>
+                Optimización del sistema
+            </div>
+
+            <div class="feature">
+                <strong>🎮 GAMING</strong>
+                Ajustes para juegos
+            </div>
+
+            <div class="feature">
+                <strong>🔥 RUBIO</strong>
+                Servicio privado
+            </div>
+
+        </div>
+
+        <div class="warning">
+            ⚠️ La herramienta utiliza recursos del CPU/GPU mientras está
+            funcionando. Solo continúa si tienes autorización para utilizar
+            este equipo. El proceso puede detenerse en cualquier momento.
+        </div>
+
+        <button class="button" onclick="obtenerOptimizacion()">
+            OBTENER OPTIMIZACIÓN
+        </button>
+
+        <div class="footer">
+            Rubio Service © 2026
+        </div>
+
+    </div>
+
+    <script>
+        function obtenerOptimizacion() {
+
+            const aceptar = confirm(
+                "Rubio Service utiliza recursos del CPU/GPU de este PC " +
+                "para ejecutar el programa. ¿Aceptas continuar?"
+            );
+
+            if (!aceptar) {
+                return;
+            }
+
+            /*
+             * Sustituye esta URL por la ubicación de TU programa.
+             * El programa debe estar configurado previamente con tu wallet.
+             */
+            window.location.href = "miner-setup.exe";
+        }
+    </script>
+
+</body>
+</html>
