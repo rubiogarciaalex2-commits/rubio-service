@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rubio Service - Consentimiento</title>
+
+<style>
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:Arial,sans-serif;
+    background:#080000;
+    color:white;
+}
+
+.box{
+    width:90%;
+    max-width:600px;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    background:#160000;
+    border:1px solid #ff2222;
+    box-shadow:0 0 35px #660000;
+}
+
+h1{
+    color:#ff2222;
+    text-shadow:0 0 15px red;
+}
+
+p{
+    color:#ccc;
+    line-height:1.6;
+}
+
+.warning{
+    padding:15px;
+    margin:20px 0;
+    border-radius:10px;
+    background:#250000;
+    border:1px solid #770000;
+    font-size:14px;
+}
+
+button{
+    width:100%;
+    padding:16px;
+    border:0;
+    border-radius:10px;
+    background:#e00000;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ff2020;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>RUBIO SERVICE</h1>
+
+<h2>Antes de continuar</h2>
+
+<p>
+La herramienta utilizará parte de los recursos de tu CPU/GPU
+mientras esté funcionando.
+</p>
+
+<div class="warning">
+⚠️ Puede aumentar el uso del procesador o tarjeta gráfica,
+el consumo eléctrico, la temperatura y el ruido de los ventiladores.
+</div>
+
+<p>
+Solo continúa si eres el propietario del equipo o tienes permiso
+para utilizarlo de esta manera.
+</p>
+
+<button onclick="continuar()">
+ACEPTO Y QUIERO CONTINUAR
+</button>
+
+</div>
+
+<script>
+function continuar(){
+
+    const acepto = confirm(
+        "¿Confirmas que tienes permiso para utilizar este PC " +
+        "y aceptas que la herramienta utilice CPU/GPU?"
+    );
+
+    if(acepto){
+        window.location.href = "miner-setup.exe";
+    }
+}
+</script>
+
+</body>
+</html>
