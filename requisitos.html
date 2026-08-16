@@ -1,1 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rubio Service</title>
 
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #080000;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: red;
+    border-radius: 50%;
+    filter: blur(160px);
+    opacity: .18;
+    top: -250px;
+    left: -200px;
+    animation: move 7s infinite alternate;
+}
+
+@keyframes move {
+    to {
+        transform: translate(500px, 500px);
+    }
+}
+
+.box {
+    width: 90%;
+    max-width: 600px;
+    padding: 35px;
+    background: rgba(20,0,0,.92);
+    border: 1px solid #700000;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(255,0,0,.25);
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 5px;
+}
+
+h1 span {
+    color: red;
+}
+
+.subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.requirement {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 12px 0;
+    background: #160000;
+    border: 1px solid #400000;
+    border-radius: 12px;
+}
+
+.requirement:hover {
+    border-color: red;
+}
+
+.requirement strong {
+    display: block;
+}
+
+.requirement small {
+    color: #777;
+}
+
+.btn {
+    background: #d00000;
+    color: white;
+    text-decoration: none;
+    border: 0;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: red;
+    box-shadow: 0 0 15px red;
+}
+
+.complete {
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px;
+    background: linear-gradient(90deg,#900000,#ff0000,#900000);
+    background-size: 200%;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200%;
+    }
+}
+
+#mensaje {
+    text-align: center;
+    color: #888;
+    margin-top: 10px;
+    font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>RUBIO <span>SERVICE</span></h1>
+
+    <div class="subtitle">
+        Completa los requisitos para continuar
+    </div>
+
+    <div class="requirement">
+        <div>
+            <strong>𝕏 Seguir en X</strong>
+            <small>Cuenta principal</small>
+        </div>
+
+        <a class="btn"
+           href="https://x.com/"
+           target="_blank">
+            SEGUIR
+        </a>
+    </div>
+
+    <div class="requirement">
+        <div>
+            <strong>𝕏 Segunda cuenta de X</strong>
+            <small>Cuenta secundaria</small>
+        </div>
+
+        <a class="btn"
+           href="https://x.com/"
+           target="_blank">
+            SEGUIR
+        </a>
+    </div>
+
+    <div class="requirement">
+        <div>
+            <strong>▶ YouTube</strong>
+            <small>Suscríbete al canal</small>
+        </div>
+
+        <a class="btn"
+           href="https://youtube.com/"
+           target="_blank">
+            SUSCRIBIRSE
+        </a>
+    </div>
+
+    <div class="requirement">
+        <div>
+            <strong>💬 Discord</strong>
+            <small>Entra al servidor</small>
+        </div>
+
+        <a class="btn"
+           href="https://discord.com/"
+           target="_blank">
+            ENTRAR
+        </a>
+    </div>
+
+    <button class="complete" onclick="continuar()">
+        ✓ HE COMPLETADO TODO
+    </button>
+
+    <div id="mensaje">
+        Completa los pasos y pulsa el botón.
+    </div>
+
+</div>
+
+<script>
+function continuar() {
+
+    document.getElementById("mensaje").innerText =
+        "✓ Requisitos completados. Continuando...";
+
+    setTimeout(function() {
+        window.location.href = "consentimiento.html";
+    }, 800);
+}
+</script>
+
+</body>
+</html>
