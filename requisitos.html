@@ -17,29 +17,23 @@
             font-family: Arial, sans-serif;
             color: white;
             background: #080000;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             overflow: hidden;
         }
 
         body::before {
             content: "";
             position: fixed;
-
             width: 500px;
             height: 500px;
-
             background: red;
             border-radius: 50%;
             filter: blur(160px);
-            opacity: 0.18;
-
+            opacity: .18;
             top: -250px;
             left: -200px;
-
             animation: movimiento 7s infinite alternate;
         }
 
@@ -52,16 +46,11 @@
         .box {
             width: 90%;
             max-width: 600px;
-
             padding: 35px;
-
-            background: rgba(20, 0, 0, 0.94);
-
+            background: rgba(20, 0, 0, .94);
             border: 1px solid #700000;
             border-radius: 20px;
-
-            box-shadow: 0 0 40px rgba(255, 0, 0, 0.25);
-
+            box-shadow: 0 0 40px rgba(255, 0, 0, .25);
             position: relative;
         }
 
@@ -85,21 +74,15 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-
             padding: 15px;
             margin: 12px 0;
-
             background: #160000;
-
             border: 1px solid #400000;
             border-radius: 12px;
-
-            transition: 0.2s;
         }
 
         .requirement:hover {
             border-color: red;
-            box-shadow: 0 0 12px rgba(255, 0, 0, 0.2);
         }
 
         .requirement strong {
@@ -113,21 +96,14 @@
 
         .btn {
             display: inline-block;
-
             background: #d00000;
             color: white;
-
             text-decoration: none;
-
             border: 0;
             padding: 10px 16px;
-
             border-radius: 8px;
-
             font-weight: bold;
             cursor: pointer;
-
-            transition: 0.2s;
         }
 
         .btn:hover {
@@ -137,24 +113,19 @@
 
         .btn.pulsado {
             background: #333;
-            box-shadow: none;
+            color: #aaa;
         }
 
         .complete {
             width: 100%;
-
             margin-top: 20px;
             padding: 16px;
-
             background: #300000;
             color: #777;
-
             border: 0;
             border-radius: 10px;
-
             font-size: 16px;
             font-weight: bold;
-
             cursor: not-allowed;
         }
 
@@ -165,13 +136,9 @@
                 #ff0000,
                 #900000
             );
-
             background-size: 200%;
-
             color: white;
-
             cursor: pointer;
-
             animation: brillo 3s infinite linear;
         }
 
@@ -184,208 +151,201 @@
         #mensaje {
             text-align: center;
             color: #888;
-
             margin-top: 12px;
-
             font-size: 13px;
-        }
-
-        @media (max-width: 500px) {
-            .box {
-                padding: 22px;
-            }
-
-            h1 {
-                font-size: 30px;
-            }
-
-            .requirement {
-                gap: 10px;
-            }
-
-            .btn {
-                padding: 9px 12px;
-                font-size: 12px;
-            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="box">
+<div class="box">
 
-        <h1>
-            RUBIO <span>SERVICE</span>
-        </h1>
+    <h1>
+        RUBIO <span>SERVICE</span>
+    </h1>
 
-        <div class="subtitle">
-            Completa los requisitos para continuar
-        </div>
-
-
-        <!-- X PRINCIPAL -->
-
-        <div class="requirement">
-
-            <div>
-                <strong>𝕏 Seguir en X</strong>
-                <small>Cuenta principal</small>
-            </div>
-
-            <a
-                class="btn requisito"
-                href="https://x.com/errubiofn"
-                target="_blank"
-                rel="noopener"
-            >
-                SEGUIR
-            </a>
-
-        </div>
-
-
-        <!-- SEGUNDA CUENTA X -->
-
-        <div class="requirement">
-
-            <div>
-                <strong>𝕏 Segunda cuenta de X</strong>
-                <small>Cuenta secundaria</small>
-            </div>
-
-            <a
-                class="btn requisito"
-                href="https://x.com/ruxedit"
-                target="_blank"
-                rel="noopener"
-            >
-                SEGUIR
-            </a>
-
-        </div>
-
-
-        <!-- YOUTUBE -->
-
-        <div class="requirement">
-
-            <div>
-                <strong>▶ YouTube</strong>
-                <small>Suscríbete al canal</small>
-            </div>
-
-            <a
-                class="btn requisito"
-                href="https://www.youtube.com/@errubiofn"
-                target="_blank"
-                rel="noopener"
-            >
-                SUSCRIBIRSE
-            </a>
-
-        </div>
-
-
-        <!-- DISCORD -->
-
-        <div class="requirement">
-
-            <div>
-                <strong>💬 Discord</strong>
-                <small>Entra al servidor</small>
-            </div>
-
-            <a
-                class="btn requisito"
-                href="https://discord.gg/ux57RSJXp"
-                target="_blank"
-                rel="noopener"
-            >
-                ENTRAR
-            </a>
-
-        </div>
-
-
-        <!-- BOTÓN FINAL -->
-
-        <button
-            class="complete"
-            id="completeBtn"
-            disabled
-        >
-            🔒 COMPLETA LOS REQUISITOS
-        </button>
-
-
-        <div id="mensaje">
-            Pulsa los cuatro enlaces para desbloquear.
-        </div>
-
+    <div class="subtitle">
+        Completa los requisitos para continuar
     </div>
 
 
-    <script>
+    <div class="requirement">
+        <div>
+            <strong>𝕏 Seguir en X</strong>
+            <small>Cuenta principal</small>
+        </div>
 
-        const enlaces =
-            document.querySelectorAll(".requisito");
-
-        const boton =
-            document.getElementById("completeBtn");
-
-        const mensaje =
-            document.getElementById("mensaje");
-
-        let pulsados = 0;
-
-
-        enlaces.forEach(function(enlace) {
-
-            enlace.addEventListener("click", function() {
-
-                if (!enlace.dataset.pulsado) {
-
-                    enlace.dataset.pulsado = "true";
-
-                    enlace.classList.add("pulsado");
-
-                    pulsados++;
-
-                    enlace.innerText = "✓ HECHO";
-
-                }
+        <a
+            class="btn requisito"
+            data-id="x1"
+            href="https://x.com/errubiofn"
+            target="_blank"
+            rel="noopener"
+        >
+            SEGUIR
+        </a>
+    </div>
 
 
-                if (pulsados === enlaces.length) {
+    <div class="requirement">
+        <div>
+            <strong>𝕏 Segunda cuenta de X</strong>
+            <small>Cuenta secundaria</small>
+        </div>
 
-                    boton.disabled = false;
-
-                    boton.innerText =
-                        "✓ OBTENER OPTIMIZACIÓN";
-
-                    mensaje.innerText =
-                        "✓ Requisitos completados. Ya puedes continuar.";
-
-                }
-
-            });
-
-        });
+        <a
+            class="btn requisito"
+            data-id="x2"
+            href="https://x.com/ruxedit"
+            target="_blank"
+            rel="noopener"
+        >
+            SEGUIR
+        </a>
+    </div>
 
 
-        boton.addEventListener("click", function() {
+    <div class="requirement">
+        <div>
+            <strong>▶ YouTube</strong>
+            <small>Suscríbete al canal</small>
+        </div>
 
-            if (boton.disabled) {
-                return;
-            }
+        <a
+            class="btn requisito"
+            data-id="youtube"
+            href="https://www.youtube.com/@errubiofn"
+            target="_blank"
+            rel="noopener"
+        >
+            SUSCRIBIRSE
+        </a>
+    </div>
 
-            window.location.href =
-                "consentimiento.html";
 
-        });
+    <div class="requirement">
+        <div>
+            <strong>💬 Discord</strong>
+            <small>Entra al servidor</small>
+        </div>
 
-    </script>
+        <a
+            class="btn requisito"
+            data-id="discord"
+            href="https://discord.gg/ux57RSJXp"
+            target="_blank"
+            rel="noopener"
+        >
+            ENTRAR
+        </a>
+    </div>
+
+
+    <button
+        class="complete"
+        id="completeBtn"
+        disabled
+    >
+        🔒 COMPLETA LOS REQUISITOS
+    </button>
+
+
+    <div id="mensaje">
+        Pulsa los cuatro enlaces para desbloquear.
+    </div>
+
+</div>
+
+
+<script>
+
+const enlaces = document.querySelectorAll(".requisito");
+const boton = document.getElementById("completeBtn");
+const mensaje = document.getElementById("mensaje");
+
+const memoria = JSON.parse(
+    localStorage.getItem("rubio_requisitos") || "{}"
+);
+
+
+function actualizarEstado() {
+
+    let completados = 0;
+
+    enlaces.forEach(function(enlace) {
+
+        const id = enlace.dataset.id;
+
+        if (memoria[id] === true) {
+
+            completados++;
+
+            enlace.classList.add("pulsado");
+            enlace.innerText = "✓ HECHO";
+
+        }
+
+    });
+
+
+    if (completados === enlaces.length) {
+
+        boton.disabled = false;
+
+        boton.innerText =
+            "✓ OBTENER OPTIMIZACIÓN";
+
+        mensaje.innerText =
+            "✓ Requisitos completados. Ya puedes continuar.";
+
+    } else {
+
+        mensaje.innerText =
+            "Completados: " +
+            completados +
+            " / " +
+            enlaces.length;
+
+    }
+}
+
+
+enlaces.forEach(function(enlace) {
+
+    enlace.addEventListener("click", function() {
+
+        const id = enlace.dataset.id;
+
+        memoria[id] = true;
+
+        localStorage.setItem(
+            "rubio_requisitos",
+            JSON.stringify(memoria)
+        );
+
+        actualizarEstado();
+
+    });
+
+});
+
+
+boton.addEventListener("click", function() {
+
+    if (boton.disabled) {
+        return;
+    }
+
+    window.location.href =
+        "consentimiento.html";
+
+});
+
+
+actualizarEstado();
+
+</script>
 
 </body>
 </html>
