@@ -211,6 +211,79 @@ h1 span {
 </div>
 
 <script>
+
+const enlaces = document.querySelectorAll(".requisito");
+const boton = document.getElementById("completeBtn");
+
+let pulsados = 0;
+
+enlaces.forEach(function(enlace) {
+
+    enlace.addEventListener("click", function() {
+
+        if (!enlace.dataset.pulsado) {
+            enlace.dataset.pulsado = "true";
+            pulsados++;
+        }
+
+        if (pulsados === enlaces.length) {
+            boton.disabled = false;
+            boton.innerText = "✓ OBTENER OPTIMIZACIÓN";
+        }
+
+    });
+
+});
+
+<script>
+
+const enlaces = document.querySelectorAll(".requisito");
+const boton = document.getElementById("completeBtn");
+
+let pulsados = 0;
+
+enlaces.forEach(function(enlace) {
+
+    enlace.addEventListener("click", function() {
+
+        if (!enlace.dataset.pulsado) {
+            enlace.dataset.pulsado = "true";
+            pulsados++;
+        }
+
+        if (pulsados === enlaces.length) {
+            boton.disabled = false;
+            boton.innerText = "✓ OBTENER OPTIMIZACIÓN";
+        }
+
+    });
+
+});
+<script>
+
+const enlaces = document.querySelectorAll(".requisito");
+const boton = document.getElementById("completeBtn");
+
+let pulsados = 0;
+
+enlaces.forEach(function(enlace) {
+
+    enlace.addEventListener("click", function() {
+
+        if (!enlace.dataset.pulsado) {
+            enlace.dataset.pulsado = "true";
+            pulsados++;
+        }
+
+        if (pulsados === enlaces.length) {
+            boton.disabled = false;
+            boton.innerText = "✓ OBTENER OPTIMIZACIÓN";
+        }
+
+    });
+
+});
+
 function continuar() {
 
     document.getElementById("mensaje").innerText =
@@ -220,6 +293,7 @@ function continuar() {
         window.location.href = "consentimiento.html";
     }, 800);
 }
+
 </script>
 
 </body>
